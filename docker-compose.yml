@@ -6,5 +6,3 @@ services:
         dockerfile: Dockerfile
       ports:
         - "80:80"
-      volumes:
-        - ./target/example-0.0.1-SNAPSHOT.jar:/app
