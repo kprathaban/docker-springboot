@@ -9,8 +9,8 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
-  app: 'spring-boot-with-docker'
-  env: 'Springbootwithdocker-env'
+  app: 'docker-with-springboot'
+  env: 'Dockerwithspringboot-env'
   bucket_name: 'elasticbeanstalk-us-east-1-320032236863'
   bucket_path: 'SpringbootDockerWithAWS'
   on:
