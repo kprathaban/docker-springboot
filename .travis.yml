@@ -5,3 +5,15 @@ services:
 
 script:
   - docker build -t karthiksaran/docker-springboot-final .
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'spring-boot-with-docker'
+  env: 'Springbootwithdocker-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-320032236863'
+  bucket_path: 'SpringbootDockerWithAWS'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
