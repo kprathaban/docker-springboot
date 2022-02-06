@@ -1,0 +1,10 @@
+version: '3'
+services:
+    springboot-app:
+      build: 
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - "8087:8087"
+      volumes:
+        - /app
