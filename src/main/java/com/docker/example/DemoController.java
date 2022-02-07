@@ -10,7 +10,7 @@ public class DemoController {
     @GetMapping("/")
     public String displayName(){
 
-        return "Karthikeyan";
+        return "Started using ngnix server";
     }
 
     

@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM maven:3.5-jdk-8-alpine
 WORKDIR /app
-COPY ./target/example-0.0.1-SNAPSHOT.jar .
-CMD ["java" , "-jar" , "example-0.0.1-SNAPSHOT.jar"]
+COPY . .
+CMD ["mvn" , "clean" , "install"]
