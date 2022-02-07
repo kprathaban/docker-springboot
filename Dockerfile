@@ -1,3 +1,8 @@
-FROM openjdk:8-jdk-alpine
+FROM maven:3.5-jdk-8-alpine as builder
 WORKDIR /app
-COPY  /target/example-0.0.1-SNAPSHOT.jar ./application.jar
+COPY . .
+RUN mvn clean install
+
+FROM openjdk:8-jre-alpine
+WORKDIR /app
+COPY --from=builder /app/target/application.jar .
