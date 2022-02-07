@@ -1,4 +1,3 @@
-FROM maven:3.5-jdk-8-alpine
+FROM openjdk:8-jdk-alpine
 WORKDIR /app
-COPY . .
-RUN mvn clean install
+COPY  /target/example-0.0.1-SNAPSHOT.jar ./application.jar
