@@ -6,4 +6,18 @@ before-install:
   - docker build -t karthiksaran/spring-boot-docker .
 
 script:
-  - docker run karthiksaran/spring-boot-docker mvn test  
+  - docker run karthiksaran/spring-boot-docker mvn test
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'us-east-1'
+  app: 'spring-boot-with-docker-aws'
+  env: 'Springbootwithdockeraws-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-320032236863'
+  bucket_path: 'spring-boot-with-docker-aws'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
+    
