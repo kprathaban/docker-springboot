@@ -5,10 +5,6 @@ services:
 before-install:
   - docker build -t karthiksaran/spring-boot-docker .
 
-script:
-  - docker run karthiksaran/spring-boot-docker mvn test
-
-
 deploy:
   provider: elasticbeanstalk
   region: 'us-east-1'
